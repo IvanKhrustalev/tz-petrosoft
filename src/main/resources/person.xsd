@@ -1,0 +1,45 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tz-petrosoft.com"
+           xml:lang="en"
+           targetNamespace="http://tz-petrosoft.com" elementFormDefault="qualified">
+
+
+<xs:element name="Person" type="tns:Person"/>
+    <xs:complexType name="Person">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="age" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+<!--                                                -->
+    <xs:element name="converterRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="person" type="tns:Person"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="converterResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="log" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+<!--                                                -->
+
+    <xs:element name="getPersonNameRequest" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name = "person" type="tns:Person"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getPersonNameResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
